@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sunminhuai666.top/"/>
-  <updated>2020-02-03T03:49:35.271Z</updated>
+  <updated>2020-02-06T16:00:00.000Z</updated>
   <id>https://sunminhuai666.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>categories</title>
-    <link href="https://sunminhuai666.top/2020/02/03/index/"/>
-    <id>https://sunminhuai666.top/2020/02/03/index/</id>
-    <published>2020-02-02T16:00:00.000Z</published>
-    <updated>2020-02-03T03:49:35.271Z</updated>
+    <title>主机选择及动态建站</title>
+    <link href="https://sunminhuai666.top/2020/02/06/zhu-ji-xuan-ze-ji-dong-tai-jian-zhan/"/>
+    <id>https://sunminhuai666.top/2020/02/06/zhu-ji-xuan-ze-ji-dong-tai-jian-zhan/</id>
+    <published>2020-02-05T16:00:00.000Z</published>
+    <updated>2020-02-06T16:00:00.000Z</updated>
     
     <summary type="html">
     
@@ -29,17 +29,56 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;h1 id=&quot;主机选择及动态建站&quot;&gt;&lt;a href=&quot;#主机选择及动态建站&quot; class=&quot;headerlink&quot; title=&quot;主机选择及动态建站&quot;&gt;&lt;/a&gt;主机选择及动态建站&lt;/h1&gt;&lt;h2 id=&quot;一些废话&quot;&gt;&lt;a href=&quot;#一些废话&quot;
         
       
     
     </summary>
     
     
+      <category term="技术" scheme="https://sunminhuai666.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="教程" scheme="https://sunminhuai666.top/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="建站" scheme="https://sunminhuai666.top/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+      <category term="主机" scheme="https://sunminhuai666.top/tags/%E4%B8%BB%E6%9C%BA/"/>
+    
+      <category term="wordpress" scheme="https://sunminhuai666.top/tags/wordpress/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主机选择及动态建站</title>
+    <link href="https://sunminhuai666.top/2020/02/06/liang-hua-jiao-yi/"/>
+    <id>https://sunminhuai666.top/2020/02/06/liang-hua-jiao-yi/</id>
+    <published>2020-02-05T16:00:00.000Z</published>
+    <updated>2020-02-06T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;主机选择及动态建站&quot;&gt;&lt;a href=&quot;#主机选择及动态建站&quot; class=&quot;headerlink&quot; title=&quot;主机选择及动态建站&quot;&gt;&lt;/a&gt;主机选择及动态建站&lt;/h1&gt;&lt;h2 id=&quot;一些废话&quot;&gt;&lt;a href=&quot;#一些废话&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="https://sunminhuai666.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="教程" scheme="https://sunminhuai666.top/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="建站" scheme="https://sunminhuai666.top/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+      <category term="主机" scheme="https://sunminhuai666.top/tags/%E4%B8%BB%E6%9C%BA/"/>
+    
+      <category term="wordpress" scheme="https://sunminhuai666.top/tags/wordpress/"/>
     
   </entry>
   
@@ -71,6 +110,33 @@
       <category term="建站" scheme="https://sunminhuai666.top/tags/%E5%BB%BA%E7%AB%99/"/>
     
       <category term="hexo" scheme="https://sunminhuai666.top/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>categories</title>
+    <link href="https://sunminhuai666.top/2020/02/03/index/"/>
+    <id>https://sunminhuai666.top/2020/02/03/index/</id>
+    <published>2020-02-02T16:00:00.000Z</published>
+    <updated>2020-02-03T03:49:35.271Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
     
   </entry>
   
