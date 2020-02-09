@@ -470,7 +470,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-06
+                    2020-02-09
                 </div>
                 
 
@@ -528,9 +528,9 @@
 </ul>
 <h3 id="不需要服务器的静态网页"><a href="#不需要服务器的静态网页" class="headerlink" title="不需要服务器的静态网页"></a>不需要服务器的静态网页</h3><ul>
 <li>主要就是框架+托管的方式，框架有Hexo、Jekyll、Vuepress等等，托管平台有github、coding、码云（免费版不能自动部署，pages pro收费）等，该方法需要自己搭建环境，较为繁琐，但可拓展性很高，部分涉及写作的命令、代码已经可以使用插件代替，如hexoeditor、hexoblogclient等，尤其是hexo的插件、主题市场非常丰富，需要吐槽的是github的国内下载速度超慢</li>
-<li>作为该方法的优化，出现了客户端+框架+托管的方式，如Gridea+coding的方式，该方法非常简单快速，但扩展性不足，需要吐槽的是其自带的编辑器bug不少；还有就是本博客使用的hexoeditor+hexo+coding的方式，可以实现一键部署等功能</li>
+<li>作为该方法的优化，出现了客户端+框架+托管的方式，如Gridea+coding的方式，该方法非常简单快速，但扩展性不足，需要吐槽的是其自带的编辑器bug不少；还有就是本博客使用的hexoblogclient+hexo+coding的方式，可以实现一键部署、博文本地管理等功能</li>
 </ul>
-<h2 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h2><p>需求：尽可能免费或者低价，稳定简便，本地存储，书写优雅<br>方案：采用hexoeditor编写并本地存储+一键部署+Coding托管的方式<br>安装步骤：</p>
+<h2 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h2><p>需求：尽可能免费或者低价，稳定简便，本地存储，书写优雅<br>方案：采用hexoblogclient编写并本地存储+一键部署+Coding托管的方式<br>安装步骤：</p>
 <ul>
 <li>安装git，安装nodejs</li>
 <li>git bash here</li>
@@ -643,7 +643,7 @@ layout: "about"
 <p>  然后在站点配置文件下，找到<code>skip_render</code>，在后面添加属性，如下：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">skip_render</span><span class="token punctuation">:</span> aboutme/**  <span class="token comment" spellcheck="true"># 其意思为在对文件进行渲染时跳过aboutme文件下的所有文件</span></code></pre>
 <ul>
-<li>一键部署：测试了hexoeditor，hexoclient，hexoblogclent三款插件，仅hexoeditor可以正常使</li>
+<li>一键部署：测试了hexoeditor(bug比较多)，hexoclient，hexoblogclent（基于hexoclient二次开发，界面更友好）三款插件，最终选择<a href="https://github.com/Xonlystar/hexo-blog-client" target="_blank" rel="noopener">hexoblogclient</a></li>
 </ul>
 <h2 id="其他资料"><a href="#其他资料" class="headerlink" title="其他资料"></a>其他资料</h2><ul>
 <li>SEO优化：<a href="https://zhuanlan.zhihu.com/p/92508540" target="_blank" rel="noopener">参考1</a>，<a href="https://zhuanlan.zhihu.com/p/80140893" target="_blank" rel="noopener">参考2</a></li>
