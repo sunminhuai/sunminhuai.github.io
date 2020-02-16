@@ -1,0 +1,1579 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="机器学习算法, 技术,政策,金融">
+    <meta name="description" content="机器学习算法该文档试图对机器学习算法进行总结、对比并建立分析体系
+一、概述机器学习的工作方式
+选择数据：首先将原始数据分成三组：训练数据、验证数据和测试数据
+
+数据建模：再使用训练数据来构建使用相关特征的模型
+
+验证模型：使用验证数据输入到">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>机器学习算法 | Avalon</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Avalon" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<!-- 一言API --> 
+<!-- 现代写法，推荐 --> 
+<!-- 兼容低版本浏览器 (包括 IE)，可移除 --> 
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script> 
+<!--End--> 
+<script> 
+    fetch('https://v1.hitokoto.cn') 
+        .then(function (res){ 
+            return res.json(); 
+        }) 
+        .then(function (data) { 
+            var hitokoto = document.getElementById('hitokoto'); 
+            hitokoto.innerText = data.hitokoto + ' \n ' + ' \n ' + '——『' + ' ' + data.from + ' ' +'』'; 
+        }) 
+        .catch(function (err) { 
+            console.error(err); 
+        }) 
+</script>
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Avalon</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/about">
+          
+          <i class="fab fa-internet-explorer" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>关于小站</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/resume">
+          
+          <i class="fas fa-portrait" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>个人简历</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-toolbox" style="zoom: 0.6;"></i>
+      
+      <span>常用工具</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Avalon</div>
+        <div class="logo-desc">
+            
+            技术、政策、金融知识分享
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/about " style="margin-left:75px";>
+				  
+				   <i class="fa fab fa-internet-explorer" style="position: absolute;left:50px" ></i>
+			      
+		          <span>关于小站</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/resume " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-portrait" style="position: absolute;left:50px" ></i>
+			      
+		          <span>个人简历</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-toolbox"></i>
+			
+			常用工具
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">机器学习算法</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                技术
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-10-22
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-02-16
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    10k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    34 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="机器学习算法"><a href="#机器学习算法" class="headerlink" title="机器学习算法"></a>机器学习算法</h1><p>该文档试图对机器学习算法进行总结、对比并建立分析体系</p>
+<h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><h2 id="机器学习的工作方式"><a href="#机器学习的工作方式" class="headerlink" title="机器学习的工作方式"></a><strong>机器学习的工作方式</strong></h2><ol>
+<li><p>选择数据：首先将原始数据分成三组：训练数据、验证数据和测试数据</p>
+</li>
+<li><p>数据建模：再使用训练数据来构建使用相关特征的模型</p>
+</li>
+<li><p>验证模型：使用验证数据输入到已经构建的数据模型中</p>
+</li>
+<li><p>测试模型：使用测试数据检查被验证的模型的性能表现</p>
+</li>
+<li><p>使用模型：使用完全训练好的模型在新数据上做预测</p>
+</li>
+<li><p>调优模型：使用更多数据、不同的特征或调整过的参数来提升算法的性能表现</p>
+<h2 id="机器学习的算法分类"><a href="#机器学习的算法分类" class="headerlink" title="机器学习的算法分类"></a><strong>机器学习的算法分类</strong></h2><p>机器学习基于学习形式的不同通常可分为三类：监督学习、非监督学习、半监督学习、强化学习和深度学习</p>
+<h2 id="机器学习过程举例说明"><a href="#机器学习过程举例说明" class="headerlink" title="机器学习过程举例说明"></a><strong>机器学习过程举例说明</strong></h2><p>所谓机器学习过程，是指观察有 n 个样本数据组成的集合，并根据这些数据来预测未知数据的性质，那么在给定数据集（所谓大数据）和具体问题的前提下，一般解决问题的步骤可以概括如下：</p>
+</li>
+<li><p>数据抽象：将数据集和具体问题抽象成数学语言，以恰当的数学符号表示。这样做自然是为了方便表述和求解问题，而且也更加直观。</p>
+</li>
+<li><p>设定性能度量指标：机器学习是产生模型的算法，一般来说模型都有误差。如果模型学的太好，把训练样本自身的一些特点当成所有潜在样本具有的一般性质，这种情况称为过拟合，这样的模型在面对新样本时就会出现较大误差，专业表述就是导致模型的泛化性能下降。与之相对的是欠拟合，模型对样本的一般性质都没学好，这种情况一般比较好解决，扩充数据集或者调整模型皆可。</p>
+</li>
+<li><p>数据预处理：之所以要做数据预处理，是因为提供的数据集往往很少是可以直接拿来用的。例如：如果样本的属性太多，一般有两种方法： 降维和特征选择。特征选择比较好理解，就是选择有用相关的属性，或者用另外一种表达方式：选择样本中有用、跟问题相关的特征。</p>
+</li>
+<li><p>选定模型：在数据集完美的情况下，接下来就是根据具体问题选定恰当的模型了。一种方式是根据有没有标记样本考虑。如果是有标记样本，可以考虑有监督学习，反之则是无监督学习，兼而有之就看半监督学习是否派的上用场。</p>
+</li>
+<li><p>训练及优化：选定了模型，如何训练和优化也是一个重要问题。如果要评估训练集和验证集的划分效果，常用的有留出法、交叉验证法、自助法、模型调参等如果模型计算时间太长，可以考虑剪枝如果是过拟合，则可通过引入正则化项来抑制（补偿原理）如果单个模型效果不佳，可以集成多个学习器通过一定策略结合，取长补短（集成学习）</p>
+</li>
+<li><p>机器学习举例分析：在机器学习领域特征比模型（学习算法）更重要。举个例子，如果我们的特征选得很好，可能我们用简单的规则就能判断出最终的结果，甚至不需要模型。比如，要判断一个人是男还是女，假设由计算机来完成这个任务，首先采集到各种数据（特征：姓名、身高、头发长度，籍贯、是否吸烟等等。因为根据统计我们知道男人一般比女人高，头发比女人短，并且会吸烟；所以这些特征都有一定的区分度，但是总有反例存在。我们用最好的算法可能准确率也达不到 100％。然后再进行特征提取，提出对目标有意义的特征，删除无关的（籍贯），然后进行预处理，对特征提取结果的再加工，目的是增强特征的表示能力，防止模型（分类器）过于复杂和学习困难。接下来就是训练数据，这里我们通过监督学习或无监督的方法来拟合分类器模型。学习器通过分析数据的规律尝试拟合出这些数据和学习目标间的函数，使得定义在训练集上的总体误差尽可能的小，从而利用学得的函数来预测未知数据的学习方法预测出结果，最后对结果进行评价和改进。</p>
+</li>
+</ol>
+<h3 id="预处理-特征工程"><a href="#预处理-特征工程" class="headerlink" title="预处理/特征工程"></a>预处理/特征工程</h3><p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/540419/1571646895798-6009bd13-8f86-4557-a3e1-5c4ed2ef9056.jpeg#align=left&amp;display=inline&amp;height=967&amp;name=%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B.jpg&amp;originHeight=967&amp;originWidth=875&amp;size=131977&amp;status=done&amp;width=875" alt="特征工程.jpg">)来源：<a href="https://www.jianshu.com/p/ace5051d0023" target="_blank" rel="noopener">https://www.jianshu.com/p/ace5051d0023</a></p>
+<h2 id="机器学习的应用范围"><a href="#机器学习的应用范围" class="headerlink" title="机器学习的应用范围"></a><strong>机器学习的应用范围</strong></h2><p>全景图<img src="https://cdn.nlark.com/yuque/0/2019/jpeg/540419/1571661473403-1024c063-a19f-492b-aba3-5c22c501daf0.jpeg#align=left&amp;display=inline&amp;height=1710&amp;name=%E5%85%A8%E6%99%AF%E5%9B%BE.jpg&amp;originHeight=1710&amp;originWidth=2280&amp;size=1166594&amp;status=done&amp;width=2280" alt="全景图.jpg"></p>
+<h3 id="模式识别"><a href="#模式识别" class="headerlink" title="模式识别"></a><strong>模式识别</strong></h3><p>模式识别＝机器学习。两者的主要区别在于前者是从工业界发展起来的概念，后者则主要源自计算机学科。在著名的《Pattern Recognition And Machine Learning》这本书中，Christopher M． Bishop 在开头是这样说的：“模式识别源自工业界，而机器学习来自于计算机学科。不过，它们中的活动可以被视为同一个领域的两个方面，同时在过去的十年间，它们都有了长足的发展”。</p>
+<h3 id="数据挖掘"><a href="#数据挖掘" class="headerlink" title="数据挖掘"></a>数据挖掘</h3><p>数据挖掘＝机器学习＋数据库。数据挖掘仅仅是一种方式，不是所有的数据都具有价值，数据挖掘思维方式才是关键，加上对数据深刻的认识，这样才可能从数据中导出模式指引业务的改善。大部分数据挖掘中的算法是机器学习的算法在数据库中的优化。</p>
+<h3 id="统计学习"><a href="#统计学习" class="headerlink" title="统计学习"></a>统计学习</h3><p>统计学习近似等于机器学习。统计学习是个与机器学习高度重叠的学科。因为机器学中的大多数方法来自统计学，甚至可以认为，统计学的发展促进机器学习的繁荣昌盛。例如著名的支持向量机算法，就是源自统计学科。两者的区别在于：统计学习者重点关注的是统计模型的发展与优化，偏数学，而机器学习者更关注的是能够解决问题，偏实践，因此机器学习研究者会重点研究学习算法在计算机上执行的效率与准确性的提升。</p>
+<h3 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h3><p>计算机视觉＝图像处理＋机器学习。图像处理技术用于将图像处理为适合进入机器学模型中的输入，机器学习则负责从图像中识别出相关的模式。计算机视觉相关的应用非常的多，例如百度识图、手写字符识别、车牌识别等等应用。这个领域将是未来研究的热门方向。随着机器学习的新领域深度学习的发展，大大促进了计算机图像识别的效果，因此未来计算机视觉界的发展前景不可估量。</p>
+<h3 id="语音识别"><a href="#语音识别" class="headerlink" title="语音识别"></a>语音识别</h3><p>语音识别＝语音处理＋机器学习。语音识别就是音频处理技术与机器学习的结合。语音识别技术一般不会单独使用，一般会结合自然语言处理的相关技术。目前的相关应用有苹果的语音助手 siri 等</p>
+<h3 id="自然语言处理"><a href="#自然语言处理" class="headerlink" title="自然语言处理"></a><strong>自然语言处理</strong></h3><p>自然语言处理＝文本处理＋机器学习。自然语言处理技术主要是让机器理解人类的语言的一门领域。在自然语言处理技术中，大量使用了编译原理相关的技术，例如词法分析，语法分析等等，除此之外，在理解这个层面，则使用了语义理解，机器学习等技术。作为唯一由人类自身创造的符号，自然语言处理一直是机器学习界不断研究的方向。</p>
+<h3 id="工业生产应用"><a href="#工业生产应用" class="headerlink" title="工业生产应用"></a><strong>工业生产应用</strong></h3><ol>
+<li>代替肉眼检查作业，实现制造检查智能化和无人化</li>
+<li>大幅改善工业机器人的作业性能，提升制造流程的自动化和无人化</li>
+<li>工业机器人异常的提前检知，从而有效避免机器故障带来的损失和影响</li>
+<li>PCB 电路板的辅助设计</li>
+<li>快速高效地找出符合 3D 模型的现实零件</li>
+</ol>
+<h3 id="日常生活应用"><a href="#日常生活应用" class="headerlink" title="日常生活应用"></a><strong>日常生活应用</strong></h3><ol>
+<li>市民出行选乘公交预测</li>
+<li>商品图片分类</li>
+<li>基于文本内容的垃圾短信识别</li>
+<li>国家电网客户用电异常行为分析</li>
+<li>自动驾驶场景中的交通标志检测</li>
+<li>大数据精准营销中用户画像挖掘</li>
+<li>监控场景下的行人精细化识别</li>
+<li>需求预测与仓储规划方案</li>
+<li>股价走势预测</li>
+<li>地震预报</li>
+<li>穿衣搭配推荐</li>
+<li>依据用户轨迹的商户精准营销</li>
+<li>气象关联分析</li>
+<li>交通事故成因分析</li>
+<li>基于兴趣的实时新闻推荐</li>
+</ol>
+<h2 id="算法效果对比"><a href="#算法效果对比" class="headerlink" title="算法效果对比"></a>算法效果对比</h2><h3 id="测量方法"><a href="#测量方法" class="headerlink" title="测量方法"></a>测量方法</h3><p>测量方法影响算法的选择及分析过程，测量方法有</p>
+<ol>
+<li>重复测量：观测对象相同，仅独立变量作用结果不同</li>
+<li>独立测量：不同样本的观测对象独立，不存在关联</li>
+<li>成对测量：不同样本采用不同观测对象，尽量使样本间的观测对象成对相似</li>
+</ol>
+<h1 id="二、对比表"><a href="#二、对比表" class="headerlink" title="二、对比表"></a>二、对比表</h1><table>
+<thead>
+<tr>
+<th>算法名</th>
+<th>特点</th>
+<th>优点</th>
+<th>缺点</th>
+<th>适用情况</th>
+<th>其它</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>逻辑回归LR</td>
+<td>利用已知的自变量来预测一个离散型因变量的值。简单来说，它就是通过拟合一个逻辑函数来预测一个事件发生的概率。所以它预测的是一个概率值，输出值应该0到1之间；使用梯度下降法、牛顿法求解</td>
+<td>计算复杂度低，可解释性强，对于二分类问题非常有效</td>
+<td>容易欠拟合，分类精度可能不高；只能处理两分类问题，且必须线性可分；对缺失敏感</td>
+<td>数值型和标称型数据；用于二分类领域，可以得出概率值，适用于根据分类概率排名的领域，如搜索排名；Logistic回归的扩展softmax可以应用于多分类领域，如手写字识别等；信用评估；</td>
+<td>逻辑回归函数虽然是一个非线性的函数，但其实其去除Sigmoid映射函数之后，其他步骤都和线性回归一致；岭回归是专用于共线性数据的有偏估计方法，实际上是改良的最小二乘估计法；</td>
+</tr>
+<tr>
+<td>支持向量机SVM</td>
+<td>基于超平面进行分类，擅长在变量 X 与其它变量之间进行二元分类操作，无论其关系是否是线性的；使用SMO算法求解</td>
+<td>可以解决高维问题；低泛化误差；可解释性强； 计算复杂度较低；</td>
+<td>数据量大时，内存资源消耗大（存储训练样本和核矩阵），时间复杂度高，这时候LR等算法就比SVM要好；对参数和核函数的选择比较敏感；原始的SVM只比较擅长处理二分类 ；对非线性问题没有通用解决方案，需要谨慎选择核函数；对缺失敏感</td>
+<td>适合小数量样本数据；数值型和标称型；文本分类、图像识别（主要二分类领域，毕竟常规SVM只能解决二分类问题）</td>
+<td>SVM也并不是在任何场景都比其他算法好，SVM在邮件分类上不如逻辑回归、KNN、bayes的效果好，是基于距离的模型，需要归一化</td>
+</tr>
+<tr>
+<td>决策树</td>
+<td>基于规则分类，使用贪心算法、穷举搜索求解</td>
+<td>计算复杂度低，可解释性强，对缺失不敏感，可以处理不相关特征数据</td>
+<td>容易过拟合，可限制树深度及叶子节点个数</td>
+<td>数值型和标称型数据，因此数值型数据必须离散化；企业管理实践，企业投资决策，由于决策树很好的分析能力，在决策过程应用较多。</td>
+<td>生成树的算法有信息熵、C4.5、CART等</td>
+</tr>
+<tr>
+<td>随机森林RF</td>
+<td>通过使用多个带有随机选取的数据子集的树改善了决策树的精确性，使用贪心算法、穷举搜索求解</td>
+<td>对很多数据集表现很好，较精确度比较高；不容易过拟合；可以得到变量的重要性排序；既能处理离散型数据，也能处理连续型数据，且不需要进行归一化处理；能够很好的处理缺失数据；容易并行化；计算复杂度低，可解释性强，对缺失不敏感</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>朴素贝叶斯</td>
+<td>用于计算可能条件的分支概率；使用公式解求解</td>
+<td>对小规模数据表现很好，能处理多分类任务，适合增量式训练，; 对缺失数据较不敏感，算法复杂度中，可解释性强</td>
+<td>朴素贝叶斯模型假设属性之间相互独立，实际应用中属性之间相关性较大时，分类效果不好;需要知道先验概率，且先验概率很多时候取决于假设</td>
+<td>标称型数据，欺诈检测中使用较多，文本分类，人脸识别</td>
+<td></td>
+</tr>
+<tr>
+<td>K-临近算法KNN</td>
+<td>是“基于实例的”，这意味着它会保存每个训练观察的结果。然后，通过搜索最相似的k个训练观察值并汇集结果，来预测新的观测值。使用kd树算法求解</td>
+<td>精度高、对异常值不敏感、无数据输入假定；可解释性一般，对缺失值影响一般</td>
+<td>计算复杂度高，空间复杂度，数据不平衡问题；是内存密集型的，对于高维度数据的表现不佳，并且需要有意义的距离函数来计算相似度；可解释性不强</td>
+<td>数值型和标称型；文本分类、模式识别、聚类分析，多分类领域</td>
+<td>距离函数可以是欧式距离，曼哈顿距离，闵氏距离   (Minkowski Distance), 和汉明距离（Hamming Distance）。前三种用于连续变量，汉明距离用于分类变量。如果K=1，那问题就简化为根据最近的数据分类。K值的选取时常是KNN建模里的关键。<br>k一般不大于20</td>
+</tr>
+<tr>
+<td>K均值算法K-means</td>
+<td>利用了一定数量的集群（假设K个集群）对给定数据进行分类。同一集群内的数据点是同类的，不同集群的数据点不同类.使用误差平方和法求解<br></td>
+<td>算法简单，容易实现；算法速度很快；对处理大数据集，该算法是相对可伸缩的和高效率的，因为它的复杂度大约是O(nkt)，其中n是所有对象的数目，k是簇的数目,t是迭代的次数。通常k&lt;&lt;n。这个算法通常局部收敛；计算复杂度低，可解释性强，缺失影响一般</td>
+<td>K值不容易确定，对初始值敏感，可能收敛到局部最小值；对数据类型要求较高，适合数值型数据；不适合于发现非凸面形状的簇，或者大小差别很大的簇；对于”噪声”和孤立点数据敏感，少量的该类数据能够对平均值产生极大影响</td>
+<td>数值型数据</td>
+<td>解决聚类问题的非监督式学习算法.</td>
+</tr>
+<tr>
+<td>人工神经网络ANN</td>
+<td>使用梯度下降法+反向传播法求解</td>
+<td>分类的准确度高；并行分布处理能力强,分布存储及学习能力强，对噪声神经有较强的鲁棒性和容错能力，能充分逼近复杂的非线性关系；具备联想记忆的功能，对缺失不敏感</td>
+<td>神经网络需要大量的参数，如网络拓扑结构、权值和阈值的初始值；不能观察之间的学习过程，输出结果难以解释，会影响到结果的可信度和可接受程度；学习时间过长,甚至可能达不到学习的目的；计算复杂度高，可解释性差</td>
+<td>目前深度神经网络已经应用与计算机视觉，自然语言处理，语音识别等领域并取得很好的效果</td>
+<td></td>
+</tr>
+<tr>
+<td>隐马尔可夫模型</td>
+<td>通过分析可见数据来计算隐藏状态的发生，是关于时序的概率模型</td>
+<td>容许数据的变化性，适用于识别和预测操作</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>循环神经网络RNN</td>
+<td>将值进一步逐层传递，让逐层学习成为可能。换句话说，RNN 存在某种形式的记忆，允许先前的输出去影响后面的输入</td>
+<td>循环神经网络在存在大量有序信息时具有预测能力</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>长短期记忆与门控循环单元神经网络LSTM</td>
+<td>属于改进的 RNN 拥有更好的控制记忆的能力</td>
+<td>长短期记忆和门控循环单元神经网络具备与其它循环神经网络一样的优点，但因为它们有更好的记忆能力，所以更常被使用</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>卷积神经网络CNN</td>
+<td>卷积是指来自后续层的权重的融合，可用于标记输出层</td>
+<td>当存在非常大型的数据集、大量特征和复杂的分类任务时，卷积神经网络是非常有用的</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>回归树</td>
+<td>（决策树的一种）是通过将数据集反复分割成单独的分支来实现分层化学习，从而最大化每个分割信息的增益效果。这种分支结构允许回归树自然地学习非线性关系。</td>
+<td>回归树可以学习非线性关系，并且对异常值相当敏锐</td>
+<td>无约束的单个树很容易过拟合，因为它们可以保持分支直到它们记住了所有的训练数据。但是，这个问题可以通过使用集成的方式来缓解。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>线性判别分析LDA</td>
+<td>计算每个类别的判别值，并对具备最大值的类别进行预测，该技术假设数据呈高斯分布，因此最好预先从数据中删除异常值</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>GDBT（MART）迭代决策树</td>
+<td></td>
+<td>几乎可用于所有回归问题（线性/非线性）；亦可用于二分类问题（设定阈值，大于阈值为正例，反之为负例）；可以解决过拟合问题；</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>遗传算法</td>
+<td><br></td>
+<td>搜索从群体出发，具有潜在的并行性，可以进行多个个体的同时比较，鲁棒性好。使用概率机制进行迭代，具有随机性。具有可扩展性，容易与其他算法结合。</td>
+<td>编程实现比较复杂；三个算子的实现有许多参数而目前这些参数的选择大部分是依靠经验；没有能够及时利用网络的反馈信息,故算法的搜索速度比较慢，要得要较精确的解需要较多的训练时间；算法对初始种群的选择有一定的依赖性，能够结合一些启发算法进行改进</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Adaboosting（集成算法/元算法）</td>
+<td>adaboost是一种有很高精度的分类器；可以使用各种方法构建子分类器，Adaboost算法提供的是框架；当使用简单分类器时，计算出的结果是可以理解的。而且弱分类器构造极其简单；简单，不用做特征筛选；不用担心过拟合；使用分阶段优化、公式解求解</td>
+<td>很好的利用了弱分类器进行级联；可以将不同的分类算法作为弱分类器；AdaBoost具有很高的精度；相对于bagging算法和Random Forest算法，AdaBoost充分考虑的每个分类器的权重；计算复杂度低，可解释性强，对缺失不敏感</td>
+<td>对outlier比较敏感；AdaBoost迭代次数也就是弱分类器数目不太好设定，可以使用交叉验证来进行确定；数据不平衡导致分类精度下降；训练比较耗时，每次重新选择当前分类器最好切分点。</td>
+<td>模式识别、计算机视觉领域，用于二分类和多分类场景</td>
+<td></td>
+</tr>
+<tr>
+<td>EM最大期望算法</td>
+<td>EM算法是基于模型的聚类方法，是在概率模型中寻找参数最大似然估计的算法，其中概率模型依赖于无法观测的隐藏变量。E步估计隐含变量，M步估计其他参数，交替将极值推向最大。</td>
+<td></td>
+<td>EM算法比K-means算法计算复杂，收敛也较慢，不适于大规模数据集和高维数据，但比K-means算法计算结果稳定、准确。EM经常用在机器学习和计算机视觉的数据集聚（Data Clustering）领域。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>关联规则算法（Apriori算法）</td>
+<td>Apriori算法是一种挖掘关联规则的算法，用于挖掘其内含的、未知的却又实际存在的数据关系，其核心是基于两阶段频集思想的递推算法 。Apriori算法分为两个阶段：<br>1. 寻找频繁项集；<br>2. 由频繁项集找关联规则。</td>
+<td></td>
+<td>1. 在每一步产生侯选项目集时循环产生的组合过多，没有排除不应该参与组合的元素；<br>2. 每次计算项集的支持度时，都对数据库中 的全部记录进行了一遍扫描比较，需要很大的I/O负载。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/540419/1571644974290-53967457-8d50-4e65-8952-0d86616e5b7b.jpeg#align=left&amp;display=inline&amp;height=753&amp;name=%E7%AE%97%E6%B3%95%E6%A0%91.jpeg&amp;originHeight=753&amp;originWidth=1080&amp;size=75181&amp;status=done&amp;width=1080" alt="算法树.jpeg">)来源：<a href="https://cloud.tencent.com/developer/article/1407824" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1407824</a><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/540419/1571645831482-a28cd074-d41c-4289-93a7-056c9212ea83.jpeg#align=left&amp;display=inline&amp;height=1492&amp;name=%E7%AE%97%E6%B3%95%E6%A0%912.jpg&amp;originHeight=1492&amp;originWidth=2219&amp;size=1215617&amp;status=done&amp;width=2219" alt="算法树2.jpg">)来源：<a href="https://www.cnblogs.com/mat-wu/p/6424434.html" target="_blank" rel="noopener">https://www.cnblogs.com/mat-wu/p/6424434.html</a><img src="https://cdn.nlark.com/yuque/0/2019/png/540419/1571660240006-b60b5cd3-3832-4e78-a949-288121fd83fc.png#align=left&amp;display=inline&amp;height=2492&amp;name=%E7%AE%97%E6%B3%95%E5%AF%B9%E6%AF%94.png&amp;originHeight=2492&amp;originWidth=4130&amp;size=1943552&amp;status=done&amp;width=4130" alt="算法对比.png">)来源：<a href="https://static.coggle.it/diagram/WHeBqDIrJRk-kDDY/t/categories-of-algorithms-non-exhaustive" target="_blank" rel="noopener">https://static.coggle.it/diagram/WHeBqDIrJRk-kDDY/t/categories-of-algorithms-non-exhaustive</a></p>
+<h1 id="三、算法说明"><a href="#三、算法说明" class="headerlink" title="三、算法说明"></a>三、算法说明</h1><h2 id="监督学习（Supervised-Learning）"><a href="#监督学习（Supervised-Learning）" class="headerlink" title="监督学习（Supervised Learning）"></a>监督学习（Supervised Learning）</h2><p>给学习算法提供标记的数据和所需的输出，对于每一个输入，学习者都被提供了一个回应的目标。监督学习主要被应用于快速高效地教熟 AI 现有的知识，被用于解决分类和回归的问题。根据解决问题的不同，又可分为回归和分类</p>
+<h3 id="决策树（Decision-Trees）"><a href="#决策树（Decision-Trees）" class="headerlink" title="决策树（Decision Trees）"></a>决策树（Decision Trees）</h3><p>决策树可看作一个树状预测模型，它通过把实例从根节点排列到某个叶子节点来分类实例，叶子节点即为实例所属的分类。决策树的核心问题是选择分裂属性和决策树的剪枝。决策树是一个决策支持工具，它用树形的图或者模型表示决策及其可能的后果，包括随机事件的影响、资源消耗、以及用途。用于分析判断有无贷款意向的决策树示如图 所示，从商业角度看，常用于基于规则的信用评估、赛马结果预测等。</p>
+<h3 id="Adaboost-算法"><a href="#Adaboost-算法" class="headerlink" title="Adaboost 算法"></a>Adaboost 算法</h3><p>这是一种迭代算法，其核心思想是针对同一个训练集训练不同的分类器（弱分类器），然后把这些弱分类器集合起来，构成一个更强的最终分类器（强分类器）。算法本身是改变数据分布实现的，它根据每次训练集之中的每个样本的分类是否正确，以及上次的总体分类的准确率，来确定每个样本的权值。将修改权值的新数据送给下层分类器进行训练，然后将每次训练得到的分类器融合起来，作为最后的决策分类器。AdaBoost 算法主要解决了：两类问题、多类单标签问题、多类多标签问题、大类单标签问题和回归问题； 优点：学习精度明显增加，并且不会出现过拟合问题，AdaBoost 算法技术常用于人脸识别和目标跟踪领域。</p>
+<h3 id="人工神经网络（Artificial-Neural-Network-－ANN）算法"><a href="#人工神经网络（Artificial-Neural-Network-－ANN）算法" class="headerlink" title="人工神经网络（Artificial Neural Network －ANN）算法"></a>人工神经网络（Artificial Neural Network －ANN）算法</h3><p>人工神经网络是由大量处理单元互联组成的非线性、自适应信息处理系统。它是在现代神经科学研究成果的基础上提出的，试图通过模拟大脑神经网络处理、记忆信息的方式进行信息处理。人工神经网络是并行分布式系统，采用了与传统人工智能和信息处理技术完全不同的机理，克服了传统的基于逻辑符号的人工智能在处理直觉、非结构化信息方面的缺陷，具有自适应、自组织和实时学习的特点。来源于感知机形成的多层感知机</p>
+<h3 id="SVM（Support-Vector-Machine）"><a href="#SVM（Support-Vector-Machine）" class="headerlink" title="SVM（Support Vector Machine）"></a>SVM（Support Vector Machine）</h3><p>SVM 法即支持向量机算法，由 Vapnik 等人于 1995 年提出，具有相对优良的性能指标。该方法是建立在统计学习理论基础上的机器学习方法。　SVM 是一种二分算法。假设在 N 维空间，有一组点，包含两种类型，SVM 生成 a（N－1） 维的超平面，把这些点分成两组。比如你有一些点在纸上面，这些点是线性分离的。SVM 会找到一个直线，把这些点分成两类，并且会尽可能远离这些点。从规模看来，SVM（包括适当调整过的）解决的一些特大的问题有：广告、人类基因剪接位点识别、基于图片的性别检测、大规模图片分类，适用于新闻分类、手写识别等应用。</p>
+<h3 id="朴素贝叶斯（Naive-Bayesian）"><a href="#朴素贝叶斯（Naive-Bayesian）" class="headerlink" title="朴素贝叶斯（Naive Bayesian）"></a>朴素贝叶斯（Naive Bayesian）</h3><p>贝叶斯法是一种在已知先验概率与类条件概率的情况下的模式分类方法，待分样本的分类结果取决于各类域中样本的全体。朴素贝叶斯分类器基于把贝叶斯定理运用在特征之间关系的强独立性假设上。优点：在数据较少的情况下仍然有效，可以处理多类别问题。缺点：对于输入数据的准备方式较为敏感。适用数据类型：标称型数据。现实生活中的应用例子：电子邮件垃圾副过滤、判定文章属性分类、分析文字表达的内容含义和人脸识别、情感分析、消费者分类。</p>
+<h3 id="K－近邻（k－Nearest-Neighbors，KNN）"><a href="#K－近邻（k－Nearest-Neighbors，KNN）" class="headerlink" title="K－近邻（k－Nearest Neighbors，KNN）"></a>K－近邻（k－Nearest Neighbors，KNN）</h3><p>这是一种分类算法，其核心思想是如果一个样本在特征空间中的 k 个最相邻的样本中的大多数属于某一个类别，则该样本也属于这个类别，并具有这个类别上样本的特性。该方法在确定分类决策上只依据最邻近的一个或者几个样本的类别来决定待分样本所属的类别。 kNN 方法在类别决策时，只与极少量的相邻样本有关。由于 kNN 方法主要靠周围有限的邻近的样本，而不是靠判别类域的方法来确定所属类别的，因此对于类域的交叉或重叠较多的待分样本集来说，kNN 方法较其他方法更为适合。</p>
+<h3 id="逻辑回归（Logistic-Regression）"><a href="#逻辑回归（Logistic-Regression）" class="headerlink" title="逻辑回归（Logistic Regression）"></a>逻辑回归（Logistic Regression）</h3><p>这是一种分类算法，主要用于二分类问题。逻辑回归是一种非常强大的统计方法，可以把有一个或者多个解释变量的数据，建立为二项式类型的模型，通过用累积逻辑分布的逻辑函数估计概率，测量分类因变量和一个或多个独立变量之间的关系。逻辑回归是一种非线性回归模型，相比于线性回归，它多了一个 sigmoid 函数（或称为 Logistic 函数）。通常，回归在现实生活中的用途如下：信用评估、测量市场营销的成功度、预测某个产品的收益、特定的某天是否会发生地震，路面交通流量分析、邮件过滤。</p>
+<h3 id="随机森林算法（Random-Forest）"><a href="#随机森林算法（Random-Forest）" class="headerlink" title="随机森林算法（Random Forest）"></a>随机森林算法（Random Forest）</h3><p>随机森林算法可以用于处理回归、分类、聚类以及生存分析等问题，当用于分类或回归问题时，它的主要思想是通过自助法重采样，生成很多个树回归器或分类器。在机器学习中，随机森林是一个包含多个决策树的分类器， 并且其输出的类别是由个别树输出的类别的众数而定，常用于用户流失分析、风险评估。</p>
+<h3 id="线形回归（-Linear-Regression）"><a href="#线形回归（-Linear-Regression）" class="headerlink" title="线形回归（ Linear Regression）"></a>线形回归（ Linear Regression）</h3><p>这是利用数理统计中回归分析，来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，运用十分广泛。线性回归是回归分析中第一种经过严格研究并在实际应用中广泛使用的类型。这是因为线性依赖于其未知参数的模型比非线性依赖于其位置参数的模型更容易拟合，而且产生的估计的统计特性也更容易确定。</p>
+<h2 id="无监督学习（Unsupervised-Learning）"><a href="#无监督学习（Unsupervised-Learning）" class="headerlink" title="无监督学习（Unsupervised Learning）"></a><strong>无监督学习（Unsupervised Learning）</strong></h2><p>给学习算法提供的数据是未标记的，并且要求算法识别输入数据中的模式，主要是建立一个模型，用其试着对输入的数据进行解释，并用于下次输入。现实情况下往往很多数据集都有大量的未标记样本，有标记的样本反而比较少。如果直接弃用，很大程度上会导致模型精度低。这种情况解决的思路往往是结合有标记的样本，通过估计的方法把未标记样本变为伪的有标记样本，所以无监督学习比监督学习更难掌握。非监督学习的常见应用场景包括关联规则的学习以及聚类等</p>
+<h3 id="聚类算法"><a href="#聚类算法" class="headerlink" title="聚类算法"></a>聚类算法</h3><p>把一组对象分组化的任务，使得在同一组的对象比起其它组的对象，它们彼此更加相似</p>
+<h4 id="K－means-算法"><a href="#K－means-算法" class="headerlink" title="K－means 算法"></a>K－means 算法</h4><p>这是典型的基于原型的目标函数聚类方法的代表，它是数据点到原型的某种距离作为优化的目标函数，利用函数求极值的方法得到迭代运算的调整规则。其优点是算法足够快速、简单，并且如果预处理数据和特征工程十分有效，那么该聚类算法将拥有极高的灵活性。缺点是该算法需要指定集群的数量，而 K 值的选择通常都不是那么容易确定的。另外，如果训练数据中的真实集群并不是类球状的，那么 K 均值聚类会得出一些比较差的集群。</p>
+<h4 id="Expectation-Maximisation-（EM）"><a href="#Expectation-Maximisation-（EM）" class="headerlink" title="Expectation Maximisation （EM）"></a>Expectation Maximisation （EM）</h4><p>这是一种迭代算法，用于含有隐变量（latent variable）的概率参数模型的最大似然估计或极大后验概率估计。EM 算法的主要目的是提供一个简单的迭代算法计算后验密度函数，它的最大优点是简单和稳定，但容易陷入局部最优。</p>
+<h4 id="Affinity-Propagation-聚类"><a href="#Affinity-Propagation-聚类" class="headerlink" title="Affinity Propagation 聚类"></a>Affinity Propagation 聚类</h4><p>AP 聚类算法是一种相对较新的聚类算法，该聚类算法基于两个样本点之间的图形距离（graph distances）确定集群。采用该聚类方法的集群拥有更小和不相等的大小。优点：该算法不需要指出明确的集群数量。缺点：AP 聚类算法主要的缺点就是训练速度比较慢，并需要大量内存，因此也就很难扩展到大数据集中。另外，该算法同样假定潜在的集群是类球状的。</p>
+<h4 id="层次聚类（Hierarchical-Clustering）"><a href="#层次聚类（Hierarchical-Clustering）" class="headerlink" title="层次聚类（Hierarchical Clustering）"></a>层次聚类（Hierarchical Clustering）</h4><p>层次聚类是一系列基于以下概念的聚类算法：是通过对数据集按照某种方法进行层次分解，直到满足某种条件为止。按照分类原理的不同，可以分为凝聚和分裂两种方法。优点：层次聚类最主要的优点是集群不再需要假设为类球形。另外其也可以扩展到大数据集。缺点：有点像 K 均值聚类，该算法需要设定集群的数量。</p>
+<h4 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h4><p>这是一个比较有代表性的基于密度的聚类算法。与划分和层次聚类方法不同，它将簇定义为密度相连的点的最大集合，能够把具有足够高密度的区域划分为簇，并可在噪声的空间数据库中发现任意形状的聚类。它将样本点的密集区域组成一个集群。优点：DBSCAN 不需要假设集群为球状，并且它的性能是可扩展的。此外，它不需要每个点都被分配到一个集群中，这降低了集群的异常数据。缺点：用户必须要调整「epsilon」和「min＿sample」这两个定义了集群密度的超参数。DBSCAN 对这些超参数非常敏感。</p>
+<h3 id="降维算法"><a href="#降维算法" class="headerlink" title="降维算法"></a>降维算法</h3><p>其主要特征是将数据从高维降低到低维层次，最大程度的保留了数据的信息</p>
+<h4 id="主成分分析算法（PCA-算法）"><a href="#主成分分析算法（PCA-算法）" class="headerlink" title="主成分分析算法（PCA 算法）"></a>主成分分析算法（PCA 算法）</h4><p>主成分分析也称主分量分析，旨在利用降维的思想，把多指标转化为少数几个综合指标（即主成分），其中每个主成分都能够反映原始变量的大部分信息，且所含信息互不重复。这种方法在引进多方面变量的同时将复杂因素归结为几个主成分，使问题简单化，同时得到的结果更加科学有效的数据信息。</p>
+<h4 id="局部线性嵌入（Locally-linear-embeddingLLE）LLE-降维算法"><a href="#局部线性嵌入（Locally-linear-embeddingLLE）LLE-降维算法" class="headerlink" title="局部线性嵌入（Locally linear embeddingLLE）LLE 降维算法"></a>局部线性嵌入（Locally linear embeddingLLE）LLE 降维算法</h4><p>一种非线性降维算法，它能够使降维后的数据较好地保持原有 流形结构 。该算法是针对非线性信号特征矢量维数的优化方法，这种维数优化并不是仅仅在数量上简单的约简，而是在保持原始数据性质不变的情况下，将高维空间的信号映射到低维空间上，即特征值的二次提取</p>
+<h2 id="半监督学习"><a href="#半监督学习" class="headerlink" title="半监督学习"></a>半监督学习</h2><p>在此学习方式下，输入数据部分被标识，部分没有被标识，这种学习模型可以用来进行预测，但是模型首先需要学习数据的内在结构以便合理的组织数据来进行预测。半监督式学习的应用场景包括分类和回归，半监督学习的算法包括一些对常用监督式学习算法的延伸，这些算法首先试图对未标识数据进行建模，在此基础上再对标识的数据进行预测。如图论推理算法（Graph Inference）或者拉普拉斯支持向量机（Laplacian SVM）等。</p>
+<h2 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h2><p>在小数据集上表现不佳</p>
+<h3 id="卷积神经网络CNN"><a href="#卷积神经网络CNN" class="headerlink" title="卷积神经网络CNN"></a>卷积神经网络CNN</h3><p>全连接的神经网络由于中间隐含层多，导致参数数量膨胀，并且全连接方式没有利用到局部模式（例如图片里面临近的像素是有关联的，可构成像眼睛这样更抽象的特征），所以出现了卷积神经网络。卷积神经网络限制了参数个数并且挖掘了局部结构这个特点，特别适用于图像识别。</p>
+<h3 id="循环神经网络RNN"><a href="#循环神经网络RNN" class="headerlink" title="循环神经网络RNN"></a>循环神经网络RNN</h3><p>循环神经网络可以看成一个在时间上传递的神经网络，它的深度是时间的长度，神经元的输出可以作用于下一个样本的处理。普通的全连接神经网络和卷积神经网络对样本的处理是独立的，而循环神经网络则可以应对需要学习有时间顺序的样本的任务，比如像自然语言处理和语言识别等</p>
+<h2 id="强化学习（Reinforcement-Learning）"><a href="#强化学习（Reinforcement-Learning）" class="headerlink" title="强化学习（Reinforcement Learning）"></a>强化学习（Reinforcement Learning）</h2><p>该算法与动态环境相互作用，把环境的反馈作为输入，通过学习选择能达到其目标的最优动作。强化学习这一方法背后的数学原理与监督／非监督学习略有差异。监督／非监督学习更多地应用了统计学，而强化学习更多地结合了离散数学、随机过程这些数学方法。在这种学习模式下，输入数据作为对模型的反馈，不像监督模型那样，输入数据仅仅是作为一个检查模型对错的方式，在强化学习下，输入数据直接反馈到模型，模型必须对此立刻作出调整。强化学习的常见应用场景包括动态系统以及机器人控制等。强化学习的常见算法包括Q-Learning以及时间差学习（Temporal difference learning）。在企业数据应用的场景下， 人们最常用的可能就是监督式学习和非监督式学习的模型。 在图像识别等领域，由于存在大量的非标识的数据和少量的可标识数据， 目前半监督式学习是一个很热的话题。 而强化学习更多的应用在机器人控制及其他需要进行系统控制的领域。</p>
+<h3 id="TD（λ）算法"><a href="#TD（λ）算法" class="headerlink" title="TD（λ）算法"></a>TD（λ）算法</h3><p>TD（temporal differenee）学习是强化学习技术中最主要的学习技术之一．TD 学习是蒙特卡罗思想和动态规划思想的结合，即一方面 TD 算法在不需要系统模型情况下可以直接从 agent 经验中学习；另一方面 TD 算法和动态规划一样，利用估计的值函数进行迭代。</p>
+<h3 id="Q＿learning-算法"><a href="#Q＿learning-算法" class="headerlink" title="Q＿learning 算法"></a>Q＿learning 算法</h3><p>Q＿learning 学习是一种模型无关的强化学习算法 ，又称为离策略 TD 学习（off－policy TD）．不同于 TD 算法，Q＿learning 迭代时采用状态＿动作对的奖赏和 Q （s，a）作为估计函数，在 Agent 每一次学习迭代时都需要考察每一个行为，可确保学习过程收敛。</p>
+<h2 id="遗传算法"><a href="#遗传算法" class="headerlink" title="遗传算法"></a>遗传算法</h2><p>模拟进化理论，适者生存不适者淘汰，通过淘汰机制选择最优化的模型。</p>
+<h1 id="四、分析体系"><a href="#四、分析体系" class="headerlink" title="四、分析体系"></a>四、分析体系</h1><p>基础知识<img src="https://cdn.nlark.com/yuque/0/2019/png/540419/1571659735248-b667887f-e6ea-42a3-8d12-934d566fc3c1.png#align=left&amp;display=inline&amp;height=5956&amp;name=%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.png&amp;originHeight=5956&amp;originWidth=8092&amp;size=3864163&amp;status=done&amp;width=8092" alt="基础知识.png">)<img src="https://cdn.nlark.com/yuque/0/2019/png/540419/1571659570489-25e8c0c0-1095-446e-a82a-36ba7629e652.png#align=left&amp;display=inline&amp;height=1323&amp;name=%E4%B8%AD%E6%96%87%E7%89%88.png&amp;originHeight=1323&amp;originWidth=2122&amp;size=881717&amp;status=done&amp;width=2122" alt="中文版.png">来源：CSDN</p>
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><h3 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h3><p><a href="https://www.kdnuggets.com/2016/12/random-forests-python.html" target="_blank" rel="noopener">https://www.kdnuggets.com/2016/12/random-forests-python.html</a><br><a href="https://scikit-learn.org/stable/modules/ensemble.html" target="_blank" rel="noopener">https://scikit-learn.org/stable/modules/ensemble.html</a><br><a href="https://scikit-learn.org/stable/modules/classes.html" target="_blank" rel="noopener">https://scikit-learn.org/stable/modules/classes.html</a> API速查<br><a href="https://www.jianshu.com/p/f8e16f0cc6e1" target="_blank" rel="noopener">https://www.jianshu.com/p/f8e16f0cc6e1</a> TF版</p>
+<h3 id="RNN-CNN"><a href="#RNN-CNN" class="headerlink" title="RNN/CNN"></a>RNN/CNN</h3><p><a href="https://keras.io/zh/search.html?q=RNN" target="_blank" rel="noopener">https://keras.io/zh/search.html?q=RNN</a></p>
+<h1 id="五、补充材料"><a href="#五、补充材料" class="headerlink" title="五、补充材料"></a>五、补充材料</h1><p>算法地图 <a href="http://www.tensorinfinity.com/paper_18.html" target="_blank" rel="noopener">http://www.tensorinfinity.com/paper_18.html</a><br>算法流派 <a href="https://36kr.com/p/5072074" target="_blank" rel="noopener">https://36kr.com/p/5072074</a><br>面试问题 <a href="http://blog.sina.com.cn/s/blog_cfa68e330102ydsg.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_cfa68e330102ydsg.html</a><br>github知识树 <a href="https://github.com/AliceDudu/Machine-Learning-Knowledge-Tree" target="_blank" rel="noopener">https://github.com/AliceDudu/Machine-Learning-Knowledge-Tree</a><br>github通用流程 <a href="https://github.com/AliceDudu/Machine-Learning-Knowledge-Tree/blob/master/001-%E4%B8%80%E8%88%AC%E6%B5%81%E7%A8%8B/%E4%B8%80%E4%B8%AA%E6%A1%86%E6%9E%B6%E8%A7%A3%E5%86%B3%E5%87%A0%E4%B9%8E%E6%89%80%E6%9C%89%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%97%AE%E9%A2%98.md" target="_blank" rel="noopener">https://github.com/AliceDudu/Machine-Learning-Knowledge-Tree/blob/master/001-一般流程/一个框架解决几乎所有机器学习问题.md</a><br>机器学习博客（速查） <a href="https://feisky.xyz/machine-learning/" target="_blank" rel="noopener">https://feisky.xyz/machine-learning/</a><br>速查表小抄 <a href="https://www.infoq.cn/article/IQOhaiPt*3Zs2GaxsH7q" target="_blank" rel="noopener">https://www.infoq.cn/article/IQOhaiPt*3Zs2GaxsH7q</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://sunminhuai666.top" rel="external nofollow noreferrer">sunminhuai</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://sunminhuai666.top/2019/10/22/ji-qi-xue-xi-suan-fa/">https://sunminhuai666.top/2019/10/22/ji-qi-xue-xi-suan-fa/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://sunminhuai666.top" target="_blank">sunminhuai</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">您的投食是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'z9ckl1j6Rhb6qnEgnobb0j1w-gzGzoHsz',
+        appKey: 'o6pQvak5rQoNIUawTO82myWQ',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'ヾﾉ≧∀≦)o 来呀！吐槽一番吧！'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/02/03/ji-yu-hexo-coding-jian-li-de-ge-ren-bo-ke/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="基于Hexo+coding建立的个人博客">
+                        
+                        <span class="card-title">基于Hexo+coding建立的个人博客</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            基于Hexo+coding建立的个人博客一些废话原博客sunminhuai.xyz由于域名到期、腾讯cloud studio升级、操作失误等因素导致无法访问+博文丢失，还好保存了一份数据库文件以便日后逐步恢复旧博文
+博客建站技术博客建站技术
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BB%BA%E7%AB%99/">
+                        <span class="chip bg-color">建站</span>
+                    </a>
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/15/di-chan-xiao-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="地产小记">
+                        
+                        <span class="card-title">地产小记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            环境宏观层面，2017-2018年为金融去杠杆、2018-2019年为财政去杠杆，2019年上半年以来开始稳杠杆、而近期（9月份）则为定向宽松；楼市方面，尽管18年为紧缩，但国内房价却迎来一波行情，尤其是二三线城市，其中西安涨幅为全国第一，
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AE%8F%E8%A7%82/" class="post-category">
+                                    宏观
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%B6%8B%E5%8A%BF/">
+                        <span class="chip bg-color">趋势</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                        <span class="chip bg-color">记录</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9C%B0%E4%BA%A7/">
+                        <span class="chip bg-color">地产</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('50')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Avalon<br />'
+            + '文章作者: sunminhuai<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归sunminhuai所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="https://sunminhuai666.top" target="_blank">sunminhuai</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme by&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            |&nbsp;Yiyan by&nbsp;<a href="https://hitokoto.cn" target="_blank">Hitokoto</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">24.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "2";
+                    var startDate = "3";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:1021746858@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1021746858" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1021746858" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/SaberSun/posts" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/SaberSun/posts" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
