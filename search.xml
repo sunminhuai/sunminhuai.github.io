@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>小程序制作</title>
+      <link href="/2020/03/01/xiao-cheng-xu-zhi-zuo/"/>
+      <url>/2020/03/01/xiao-cheng-xu-zhi-zuo/</url>
+      
+        <content type="html"><![CDATA[<h1 id="小程序制作"><a href="#小程序制作" class="headerlink" title="小程序制作"></a>小程序制作</h1><h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p><a href="https://zhuanlan.zhihu.com/p/88547494" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/88547494</a></p><h2 id="免费制作平台"><a href="#免费制作平台" class="headerlink" title="免费制作平台"></a>免费制作平台</h2><ul><li></li><li></li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>图形化机器学习工具</title>
       <link href="/2020/02/26/tu-xing-hua-ji-qi-xue-xi-gong-ju/"/>
       <url>/2020/02/26/tu-xing-hua-ji-qi-xue-xi-gong-ju/</url>
@@ -201,7 +228,7 @@
       <link href="/2020/02/09/liang-hua-jiao-yi/"/>
       <url>/2020/02/09/liang-hua-jiao-yi/</url>
       
-        <content type="html"><![CDATA[<h1 id="量化交易"><a href="#量化交易" class="headerlink" title="量化交易"></a>量化交易</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>量化交易是指以先进的数学模型替代人为的主观判断，利用计算机技术从庞大的历史数据中海选能带来超额收益的多种“大概率”事件以制定策略，极大地减少了投资者情绪波动的影响，避免在市场极度狂热或悲观的情况下作出非理性的投资决策</p><p><a href="https://vitu.ai" target="_blank" rel="noopener">https://vitu.ai</a></p><p><a href="https://zhuanlan.zhihu.com/p/79281650" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/79281650</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h1 id="量化交易"><a href="#量化交易" class="headerlink" title="量化交易"></a>量化交易</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>量化交易是指以先进的数学模型替代人为的主观判断，利用计算机技术从庞大的历史数据中海选能带来超额收益的多种“大概率”事件以制定策略，极大地减少了投资者情绪波动的影响，避免在市场极度狂热或悲观的情况下作出非理性的投资决策</p><h2 id="量化平台"><a href="#量化平台" class="headerlink" title="量化平台"></a>量化平台</h2><p><a href="https://vitu.ai" target="_blank" rel="noopener">https://vitu.ai</a></p><p><a href="https://zhuanlan.zhihu.com/p/79281650" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/79281650</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
