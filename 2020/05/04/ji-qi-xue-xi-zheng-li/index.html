@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="图形化机器学习工具, 技术,政策,金融">
-    <meta name="description" content="图形化机器学习工具一般机器学习都是通过框架来实现，比如sklearn/caffe/keras等，无一例外都要写代码，学一大堆函数的调用方法；图形化机器学习工具则是实现机器学习更为简便的方法，图像化GUI傻瓜操作
-免费工具
-英伟达DIGITS">
+    <meta name="keywords" content="机器学习整理, 技术,政策,金融">
+    <meta name="description" content="概念入门概念：训练错误和测试错误，“欠拟合”和”过拟合”，奥卡姆剃刀，特征结合，无关特征，升维，判别模型和生成模型，损失函数，最小方差的几何图解，稀疏性
+理论基础《机器学习》(周志华)西瓜书读书笔记 :包含算法与模型评估与选择吴恩达《Mac">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>图形化机器学习工具 | Avalon</title>
+    <title>机器学习整理 | Avalon</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">图形化机器学习工具</h1>
+                    <h1 class="description center-align post-title">机器学习整理</h1>
                 </div>
             </div>
         </div>
@@ -431,12 +430,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%80%BB%E7%BB%93/">
-                                <span class="chip bg-color">总结</span>
-                            </a>
-                        
                             <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
                                 <span class="chip bg-color">机器学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -460,21 +459,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-26
+                    2020-05-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-03
+                    2020-05-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    331
+                    208
                 </div>
                 
 
@@ -497,48 +496,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="图形化机器学习工具"><a href="#图形化机器学习工具" class="headerlink" title="图形化机器学习工具"></a>图形化机器学习工具</h1><p>一般机器学习都是通过框架来实现，比如sklearn/caffe/keras等，无一例外都要写代码，学一大堆函数的调用方法；图形化机器学习工具则是实现机器学习更为简便的方法，图像化GUI傻瓜操作</p>
-<h2 id="免费工具"><a href="#免费工具" class="headerlink" title="免费工具"></a>免费工具</h2><ul>
-<li><a href="https://github.com/NVIDIA/DIGITS" target="_blank" rel="noopener">英伟达DIGITS</a>：貌似只能做深度学习，而且不成熟，bug多</li>
-<li><a href="https://segmentfault.com/a/1190000021677851" target="_blank" rel="noopener">rattle</a>：基于R的GUI包，比较古老比较丑</li>
-<li><a href="https://deepkit.ai" target="_blank" rel="noopener">deepkit</a>：界面非常酷炫，然鹅用不了啊，貌似还在开发改bug中，github上只有文档没有代码</li>
-<li><a href="https://www.cs.waikato.ac.nz/ml/weka/index.html" target="_blank" rel="noopener">weka</a>：比较丑</li>
-<li><a href="http://orange.biolab.si" target="_blank" rel="noopener">orange</a></li>
-<li><a href="https://www.knime.com" target="_blank" rel="noopener">knime</a></li>
-<li><a href="http://ai.baidu.com/easydl/" target="_blank" rel="noopener">百度EasyDL</a>：部分免费</li>
-<li>微软Azure：免费一年，需要visa卡才行<ul>
-<li><a href="https://www.customvision.ai" target="_blank" rel="noopener">customvision</a></li>
-<li>Azure Machine Learning Studio<ul>
-<li>官网新版需要信用卡</li>
-<li><a href="https://studio.azureml.net/Home/ViewWorkspaceCached/c3aa273f7a114c95a7e47ddca31b2b07#Workspace/Projects/ListProjects" target="_blank" rel="noopener">经典版可以用</a>，<a href="https://blog.csdn.net/u011462357/article/details/79723342" target="_blank" rel="noopener">参考文档1</a>，<a href="https://zhuanlan.zhihu.com/p/45054391" target="_blank" rel="noopener">参考文档2</a>，<a href="https://www.cnblogs.com/Javi/p/6839450.html" target="_blank" rel="noopener">参考文档3</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="https://rapidminer.com" target="_blank" rel="noopener">RapidMiner</a>：收费，学生免费一年，貌似没有中文</li>
-<li><a href="https://github.com/ICT-BDA/EasyML" target="_blank" rel="noopener">中科院BDA系统</a>：需要自己配置环境，貌似github上问题挺多</li>
-<li>H2O的flow功能 <a href="https://www.h2o.ai" target="_blank" rel="noopener">https://www.h2o.ai</a></li>
-<li>KLKI <a href="https://elki-project.github.io/tutorial/" target="_blank" rel="noopener">https://elki-project.github.io/tutorial/</a></li>
-<li>IBM SPSS Modeler</li>
-<li><a href="https://www.dataiku.com/product/get-started/" target="_blank" rel="noopener">https://www.dataiku.com/product/get-started/</a></li>
-<li><a href="https://www.dominodatalab.com" target="_blank" rel="noopener">https://www.dominodatalab.com</a></li>
-<li><a href="https://github.com/Microsoft/nni" target="_blank" rel="noopener">https://github.com/Microsoft/nni</a></li>
-<li>AutoKeras</li>
-</ul>
-<p>软件类<br>knime<br>orange3<br>rapidminner</p>
-<h2 id="收费工具"><a href="#收费工具" class="headerlink" title="收费工具"></a>收费工具</h2><ul>
-<li><a href="https://data.aliyun.com/product/learn?spm=a2c4g.11186623.2.12.73f854c16GjhBk" target="_blank" rel="noopener">阿里云PAI</a></li>
-<li>谷歌AutoML</li>
-<li>IBM</li>
-<li>亚马逊</li>
-<li>第四范式</li>
-<li><a href="https://www.zhiyi.cn/about" target="_blank" rel="noopener">智易科技</a></li>
-<li><a href="https://www.alteryx.cn" target="_blank" rel="noopener">alteryx</a></li>
-<li><a href="https://www.oneclick.ai/home/" target="_blank" rel="noopener">oneclick</a></li>
-</ul>
-<h2 id="某些软件内嵌"><a href="#某些软件内嵌" class="headerlink" title="某些软件内嵌"></a>某些软件内嵌</h2><ul>
-<li>ArcGIS Pro：收费，教程少，需要写代码</li>
-</ul>
+                <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><a href="http://nooverfit.com/wp/图解机器学习-10张经典图片/" target="_blank" rel="noopener">入门概念</a>：训练错误和测试错误，“欠拟合”和”过拟合”，奥卡姆剃刀，特征结合，无关特征，升维，判别模型和生成模型，损失函数，最小方差的几何图解，稀疏性</p>
+<h2 id="理论基础"><a href="#理论基础" class="headerlink" title="理论基础"></a>理论基础</h2><p><a href="https://www.cnblogs.com/limitlessun/p/8505647.html#_label0" target="_blank" rel="noopener">《机器学习》(周志华)西瓜书读书笔记</a> :包含算法与模型评估与选择<br><a href="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes" target="_blank" rel="noopener">吴恩达《Machine Learning》笔记</a><br><a href="https://github.com/SmirkCao/Lihang" target="_blank" rel="noopener">统计学习方法(第2版)[李航]笔记1</a> ，<a href="https://www.cnblogs.com/limitlessun/p/8611103.html" target="_blank" rel="noopener">笔记2</a><br><a href="https://zhuanlan.zhihu.com/p/36378498" target="_blank" rel="noopener">知乎问题集</a><br><a href="https://zhuanlan.zhihu.com/p/25703402" target="_blank" rel="noopener">学习算法</a><br><a href="https://www.zhihu.com/question/27306416/answer/36701217" target="_blank" rel="noopener">常用机器学习算法比较</a><br><a href="https://www.zhihu.com/question/26726794/answer/151282052" target="_blank" rel="noopener">各种机器学习算法的应用场景</a>  </p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><p><a href="https://github.com/lawlite19/MachineLearning_Python" target="_blank" rel="noopener">简单算法的实现</a>：包括线性回归，逻辑回归，BP神经网络，SVM支持向量机，K-Means聚类算法，PCA主成分分析（降维），异常检测 Anomaly Detection</p>
+<h3 id="速查表"><a href="#速查表" class="headerlink" title="速查表"></a>速查表</h3><p><a href="https://mbd.baidu.com/newspage/data/landingsuper?context=%7B" target="_blank" rel="noopener"nid"%3A"news_8991644455057916425"%7D&n_type=1&p_from=4">多种库cheetsheet</a></p>
 
             </div>
             <hr/>
@@ -564,7 +525,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sunminhuai666.top/2020/02/26/tu-xing-hua-ji-qi-xue-xi-gong-ju/">https://sunminhuai666.top/2020/02/26/tu-xing-hua-ji-qi-xue-xi-gong-ju/</a>
+                    <a href="https://sunminhuai666.top/2020/05/04/ji-qi-xue-xi-zheng-li/">https://sunminhuai666.top/2020/05/04/ji-qi-xue-xi-zheng-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -602,12 +563,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%80%BB%E7%BB%93/">
-                                    <span class="chip bg-color">总结</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
                                     <span class="chip bg-color">机器学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -1036,32 +997,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/03/01/xiao-cheng-xu-zhi-zuo/">
+                <a href="/2020/05/04/ji-qi-xue-xi-zheng-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="小程序制作">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="机器学习整理">
                         
-                        <span class="card-title">小程序制作</span>
+                        <span class="card-title">机器学习整理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            小程序制作教程
-https://zhuanlan.zhihu.com/p/88547494
-https://zhuanlan.zhihu.com/p/39069762
-https://zhuanlan.zhihu.com/p/7237693
+                            概念入门概念：训练错误和测试错误，“欠拟合”和”过拟合”，奥卡姆剃刀，特征结合，无关特征，升维，判别模型和生成模型，损失函数，最小方差的几何图解，稀疏性
+理论基础《机器学习》(周志华)西瓜书读书笔记 :包含算法与模型评估与选择吴恩达《Mac
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1074,15 +1034,16 @@ https://zhuanlan.zhihu.com/p/7237693
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">教程</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
                     </a>
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">小程序</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -1096,38 +1057,32 @@ https://zhuanlan.zhihu.com/p/7237693
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/21/shang-ye-mo-shi-shu-li/">
+                <a href="/2020/03/27/sha-ren-fang-huo-jin-yao-dai-xiu-qiao-bu-lu-wu-shi-hai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="商业模式梳理">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="杀人放火金腰带，修桥补路无尸骸？">
                         
-                        <span class="card-title">商业模式梳理</span>
+                        <span class="card-title">杀人放火金腰带，修桥补路无尸骸？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            商业模式梳理个人商业模式
-出售劳动
-一次劳动出售一次——所有的打工模式
-程序员、金融民工等均可获取高额收入，同时工作强度极大，竞争激烈
-
-
-一次劳动出售多次——所有的产品模式
-创造性产品：音乐、书籍、电影、软件、专利等，对个人创作能力及市场
+                            最近因为疫情中看到的精彩社会也在思考这个问题，所以来挖一下坟，只是我更想从决策的角度去探讨而非无意义的价值观之争
+先说结论：短期来说传统所说的作恶or物质性行为是最有效的策略；但长远来说，行善or精神性行为是最有效策略；但从横向比较来说，对
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AE%8F%E8%A7%82/" class="post-category">
-                                    宏观
+                            <a href="/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/" class="post-category">
+                                    方法论
                                 </a>
                             
                             
@@ -1137,16 +1092,20 @@ https://zhuanlan.zhihu.com/p/7237693
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%80%BB%E7%BB%93/">
-                        <span class="chip bg-color">总结</span>
-                    </a>
-                    
                     <a href="/tags/%E6%80%9D%E8%80%83/">
                         <span class="chip bg-color">思考</span>
                     </a>
                     
-                    <a href="/tags/%E5%95%86%E4%B8%9A/">
-                        <span class="chip bg-color">商业</span>
+                    <a href="/tags/%E5%93%B2%E5%AD%A6/">
+                        <span class="chip bg-color">哲学</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%9A%E5%BC%88/">
+                        <span class="chip bg-color">博弈</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%B8%96%E7%95%8C%E8%A7%82/">
+                        <span class="chip bg-color">世界观</span>
                     </a>
                     
                 </div>
