@@ -132,9 +132,9 @@
       
         <tags>
             
-            <tag> 思考 </tag>
-            
             <tag> 趋势 </tag>
+            
+            <tag> 思考 </tag>
             
             <tag> 商业 </tag>
             
@@ -271,9 +271,9 @@
       
         <tags>
             
-            <tag> 思考 </tag>
-            
             <tag> 趋势 </tag>
+            
+            <tag> 思考 </tag>
             
             <tag> 疫情 </tag>
             
@@ -342,31 +342,6 @@
     
     
     <entry>
-      <title>观世界——记录高质量内容</title>
-      <link href="/2020/02/09/guan-shi-jie-ji-lu-gao-zhi-liang-nei-rong/"/>
-      <url>/2020/02/09/guan-shi-jie-ji-lu-gao-zhi-liang-nei-rong/</url>
-      
-        <content type="html"><![CDATA[<h1 id="观世界——记录高质量内容"><a href="#观世界——记录高质量内容" class="headerlink" title="观世界——记录高质量内容"></a>观世界——记录高质量内容</h1><h2 id="视频节目"><a href="#视频节目" class="headerlink" title="视频节目"></a>视频节目</h2><p>《至少一个小时》</p><h2 id="媒体资讯"><a href="#媒体资讯" class="headerlink" title="媒体资讯"></a>媒体资讯</h2><p>21世纪商业评论<br>36kr<br>虎嗅<br>DeepTech深科技<br>经纬系：中新经纬，经纬创投</p><h2 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h2><p>政事堂</p><h2 id="书单"><a href="#书单" class="headerlink" title="书单"></a>书单</h2><p>金融炼金术<br>未来简史<br><a href="https://36kr.com/p/5207344" target="_blank" rel="noopener">https://36kr.com/p/5207344</a><br><a href="https://36kr.com/p/5192982" target="_blank" rel="noopener">https://36kr.com/p/5192982</a><br><a href="https://36kr.com/p/5282214" target="_blank" rel="noopener">https://36kr.com/p/5282214</a><br><a href="https://36kr.com/p/5275748" target="_blank" rel="noopener">https://36kr.com/p/5275748</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 资源 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 资讯 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>网络资源收集</title>
       <link href="/2020/02/09/wang-luo-zi-yuan-shou-ji/"/>
       <url>/2020/02/09/wang-luo-zi-yuan-shou-ji/</url>
@@ -384,6 +359,31 @@
         <tags>
             
             <tag> 网络资源 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>观世界——记录高质量内容</title>
+      <link href="/2020/02/09/guan-shi-jie-ji-lu-gao-zhi-liang-nei-rong/"/>
+      <url>/2020/02/09/guan-shi-jie-ji-lu-gao-zhi-liang-nei-rong/</url>
+      
+        <content type="html"><![CDATA[<h1 id="观世界——记录高质量内容"><a href="#观世界——记录高质量内容" class="headerlink" title="观世界——记录高质量内容"></a>观世界——记录高质量内容</h1><h2 id="视频节目"><a href="#视频节目" class="headerlink" title="视频节目"></a>视频节目</h2><p>《至少一个小时》</p><h2 id="媒体资讯"><a href="#媒体资讯" class="headerlink" title="媒体资讯"></a>媒体资讯</h2><p>21世纪商业评论<br>36kr<br>虎嗅<br>DeepTech深科技<br>经纬系：中新经纬，经纬创投</p><h2 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h2><p>政事堂</p><h2 id="书单"><a href="#书单" class="headerlink" title="书单"></a>书单</h2><p>金融炼金术<br>未来简史<br><a href="https://36kr.com/p/5207344" target="_blank" rel="noopener">https://36kr.com/p/5207344</a><br><a href="https://36kr.com/p/5192982" target="_blank" rel="noopener">https://36kr.com/p/5192982</a><br><a href="https://36kr.com/p/5282214" target="_blank" rel="noopener">https://36kr.com/p/5282214</a><br><a href="https://36kr.com/p/5275748" target="_blank" rel="noopener">https://36kr.com/p/5275748</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 资源 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 资讯 </tag>
             
         </tags>
       
@@ -433,9 +433,9 @@
       
         <tags>
             
-            <tag> 总结 </tag>
-            
             <tag> 趋势 </tag>
+            
+            <tag> 总结 </tag>
             
         </tags>
       
@@ -578,9 +578,9 @@
       
         <tags>
             
-            <tag> 总结 </tag>
-            
             <tag> 趋势 </tag>
+            
+            <tag> 总结 </tag>
             
         </tags>
       
@@ -605,9 +605,9 @@
       
         <tags>
             
-            <tag> 机器学习 </tag>
-            
             <tag> 教程 </tag>
+            
+            <tag> 机器学习 </tag>
             
         </tags>
       
