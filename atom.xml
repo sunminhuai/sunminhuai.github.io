@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sunminhuai666.top/"/>
-  <updated>2020-05-07T13:23:44.000Z</updated>
+  <updated>2020-09-03T02:24:37.000Z</updated>
   <id>https://sunminhuai666.top/</id>
   
   <author>
@@ -15,6 +15,69 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test000</title>
+    <link href="https://sunminhuai666.top/2020/09/03/test000/"/>
+    <id>https://sunminhuai666.top/2020/09/03/test000/</id>
+    <published>2020-09-03T02:24:37.000Z</published>
+    <updated>2020-09-03T02:24:37.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;测试成功&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) {
+        
+      
+    
+    </summary>
+    
+    
+      <category term="方法论" scheme="https://sunminhuai666.top/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+    
+      <category term="总结" scheme="https://sunminhuai666.top/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="思考" scheme="https://sunminhuai666.top/tags/%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你的人生依然屎一样</title>
+    <link href="https://sunminhuai666.top/2020/07/03/ni-de-ren-sheng-yi-ran-shi-yi-yang/"/>
+    <id>https://sunminhuai666.top/2020/07/03/ni-de-ren-sheng-yi-ran-shi-yi-yang/</id>
+    <published>2020-07-03T02:24:37.000Z</published>
+    <updated>2020-07-03T02:24:37.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;得到又失去——这就是三年来命运最大的嘲弄吧，给你巨大希望之后再拿走它&lt;/p&gt;
+&lt;p&gt;考上了985的研究僧，以为得到了新的道路与机遇，其实只是表面科研实际给导师打工受剥削；拿到了中科院的实习机会，以为可以为简历增加新经历了，其实只是导师说的面子话而已其实只想你为他老实打工；遇
+        
+      
+    
+    </summary>
+    
+    
+      <category term="方法论" scheme="https://sunminhuai666.top/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+    
+      <category term="总结" scheme="https://sunminhuai666.top/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="思考" scheme="https://sunminhuai666.top/tags/%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习整理</title>
@@ -106,9 +169,9 @@
       <category term="宏观" scheme="https://sunminhuai666.top/categories/%E5%AE%8F%E8%A7%82/"/>
     
     
-      <category term="趋势" scheme="https://sunminhuai666.top/tags/%E8%B6%8B%E5%8A%BF/"/>
-    
       <category term="思考" scheme="https://sunminhuai666.top/tags/%E6%80%9D%E8%80%83/"/>
+    
+      <category term="趋势" scheme="https://sunminhuai666.top/tags/%E8%B6%8B%E5%8A%BF/"/>
     
       <category term="商业" scheme="https://sunminhuai666.top/tags/%E5%95%86%E4%B8%9A/"/>
     
@@ -256,9 +319,9 @@
       <category term="宏观" scheme="https://sunminhuai666.top/categories/%E5%AE%8F%E8%A7%82/"/>
     
     
-      <category term="趋势" scheme="https://sunminhuai666.top/tags/%E8%B6%8B%E5%8A%BF/"/>
-    
       <category term="思考" scheme="https://sunminhuai666.top/tags/%E6%80%9D%E8%80%83/"/>
+    
+      <category term="趋势" scheme="https://sunminhuai666.top/tags/%E8%B6%8B%E5%8A%BF/"/>
     
       <category term="疫情" scheme="https://sunminhuai666.top/tags/%E7%96%AB%E6%83%85/"/>
     
@@ -354,33 +417,6 @@
   </entry>
   
   <entry>
-    <title>量化交易</title>
-    <link href="https://sunminhuai666.top/2020/02/09/liang-hua-jiao-yi/"/>
-    <id>https://sunminhuai666.top/2020/02/09/liang-hua-jiao-yi/</id>
-    <published>2020-02-09T04:00:00.000Z</published>
-    <updated>2020-03-01T13:00:50.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;量化交易&quot;&gt;&lt;a href=&quot;#量化交易&quot; class=&quot;headerlink&quot; title=&quot;量化交易&quot;&gt;&lt;/a&gt;量化交易&lt;/h1&gt;&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="金融" scheme="https://sunminhuai666.top/categories/%E9%87%91%E8%9E%8D/"/>
-    
-    
-      <category term="量化" scheme="https://sunminhuai666.top/tags/%E9%87%8F%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
     <title>网络资源收集</title>
     <link href="https://sunminhuai666.top/2020/02/09/wang-luo-zi-yuan-shou-ji/"/>
     <id>https://sunminhuai666.top/2020/02/09/wang-luo-zi-yuan-shou-ji/</id>
@@ -408,6 +444,33 @@
   </entry>
   
   <entry>
+    <title>量化交易</title>
+    <link href="https://sunminhuai666.top/2020/02/09/liang-hua-jiao-yi/"/>
+    <id>https://sunminhuai666.top/2020/02/09/liang-hua-jiao-yi/</id>
+    <published>2020-02-09T04:00:00.000Z</published>
+    <updated>2020-03-01T13:00:50.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;量化交易&quot;&gt;&lt;a href=&quot;#量化交易&quot; class=&quot;headerlink&quot; title=&quot;量化交易&quot;&gt;&lt;/a&gt;量化交易&lt;/h1&gt;&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="金融" scheme="https://sunminhuai666.top/categories/%E9%87%91%E8%9E%8D/"/>
+    
+    
+      <category term="量化" scheme="https://sunminhuai666.top/tags/%E9%87%8F%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>总结19展望20</title>
     <link href="https://sunminhuai666.top/2020/02/09/zong-jie-19-zhan-wang-20/"/>
     <id>https://sunminhuai666.top/2020/02/09/zong-jie-19-zhan-wang-20/</id>
@@ -430,9 +493,9 @@
       <category term="宏观" scheme="https://sunminhuai666.top/categories/%E5%AE%8F%E8%A7%82/"/>
     
     
-      <category term="趋势" scheme="https://sunminhuai666.top/tags/%E8%B6%8B%E5%8A%BF/"/>
-    
       <category term="总结" scheme="https://sunminhuai666.top/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="趋势" scheme="https://sunminhuai666.top/tags/%E8%B6%8B%E5%8A%BF/"/>
     
   </entry>
   
@@ -526,9 +589,9 @@
     
       <category term="机器学习" scheme="https://sunminhuai666.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="笔记" scheme="https://sunminhuai666.top/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="算法" scheme="https://sunminhuai666.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="笔记" scheme="https://sunminhuai666.top/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -560,64 +623,6 @@
       <category term="记录" scheme="https://sunminhuai666.top/tags/%E8%AE%B0%E5%BD%95/"/>
     
       <category term="地产" scheme="https://sunminhuai666.top/tags/%E5%9C%B0%E4%BA%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>总结18展望19</title>
-    <link href="https://sunminhuai666.top/2019/01/02/zong-jie-18-zhan-wang-19/"/>
-    <id>https://sunminhuai666.top/2019/01/02/zong-jie-18-zhan-wang-19/</id>
-    <published>2019-01-02T02:26:28.000Z</published>
-    <updated>2020-02-16T02:26:28.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;楼市&quot;&gt;&lt;a href=&quot;#楼市&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="宏观" scheme="https://sunminhuai666.top/categories/%E5%AE%8F%E8%A7%82/"/>
-    
-    
-      <category term="趋势" scheme="https://sunminhuai666.top/tags/%E8%B6%8B%E5%8A%BF/"/>
-    
-      <category term="总结" scheme="https://sunminhuai666.top/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图形界面交互式机器学习：DIGITS搭建</title>
-    <link href="https://sunminhuai666.top/2019/01/02/tu-xing-jie-mian-jiao-hu-shi-ji-qi-xue-xi-digits-da-jian/"/>
-    <id>https://sunminhuai666.top/2019/01/02/tu-xing-jie-mian-jiao-hu-shi-ji-qi-xue-xi-digits-da-jian/</id>
-    <published>2019-01-02T02:22:42.000Z</published>
-    <updated>2020-02-16T02:22:42.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;废话&quot;&gt;&lt;a href=&quot;#废话&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="https://sunminhuai666.top/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="教程" scheme="https://sunminhuai666.top/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="机器学习" scheme="https://sunminhuai666.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

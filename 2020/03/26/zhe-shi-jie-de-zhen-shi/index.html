@@ -434,12 +434,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%B6%8B%E5%8A%BF/">
-                                <span class="chip bg-color">趋势</span>
-                            </a>
-                        
                             <a href="/tags/%E6%80%9D%E8%80%83/">
                                 <span class="chip bg-color">思考</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%B6%8B%E5%8A%BF/">
+                                <span class="chip bg-color">趋势</span>
                             </a>
                         
                             <a href="/tags/%E5%95%86%E4%B8%9A/">
@@ -481,14 +481,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    882
+                    934
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -521,7 +521,25 @@
 <p>本质是关于物质or精神的选择题——解决问题的最佳方式是超越问题——物有心无</p>
 <p>另一个有意思的问题：管理者必然面临脱实向虚的问题，即直接问题解决者不具备决策权，而决策者缺乏真实信息（中间利益体会为了个人利益过滤信息），海底捞的做法是下放决策权同时给予其一种拥有感</p>
 <p>关于两种组织架构的思考，大公司化orIP化，大公司化是金字塔组织，IP化是倒金字塔组织，大公司化是顶层产业链物质价值向多点输出寻求变现，而IP化是通过整合产业链的附加价值（精神性价值）通过IP单点寻求变现</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -584,12 +602,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%B6%8B%E5%8A%BF/">
-                                    <span class="chip bg-color">趋势</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%80%9D%E8%80%83/">
                                     <span class="chip bg-color">思考</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%B6%8B%E5%8A%BF/">
+                                    <span class="chip bg-color">趋势</span>
                                 </a>
                             
                                 <a href="/tags/%E5%95%86%E4%B8%9A/">
@@ -1316,7 +1334,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">34.4k</span>&nbsp;字
+                class="white-color">36.6k</span>&nbsp;字
             
             
             
